@@ -1,6 +1,6 @@
 import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import Logo from "../logo.png";
-import CartWidget from './CartWidget';
+import Logo from "../../logo.png";
+import CartWidget from '../Items/CartWidget';
 import "./NavBar.css";
 const NavBar = () => {
 	return (
@@ -28,7 +28,7 @@ const NavBar = () => {
 			<Nav.Link variant="light"> Sobre Nostros</Nav.Link>
 			<Nav.Link> Contacto</Nav.Link>
 			<Button className="mx-5 mb-1" size="sm" bg="ligth " variant="outline-light">Login</Button>
-			<CartWidget  num={0} />
+			<CartWidget className="cart"  num={0} />
 		</Nav>
 		</Navbar.Collapse>
 		</Navbar>

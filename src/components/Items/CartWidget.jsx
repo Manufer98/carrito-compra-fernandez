@@ -6,9 +6,8 @@ const CartWidget = ({num}) =>{
 	return (
 		<div >
 		<Button className="mb-1"  bg="ligth " variant="outline-light"   > <FiShoppingCart size={"25px"} className="my-auto" color='grey' /></Button> 
-		 
-		 <Button variant="dark">{num}</Button>
-		 </div>
+		<Button variant="dark">{num}</Button>
+		</div>
 	)
 }
 export default CartWidget;
