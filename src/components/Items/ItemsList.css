@@ -1,0 +1,40 @@
+.description {
+	color: red;
+}
+
+.title {
+	font-size: 30px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.containers {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #c3c5c5;
+	justify-content: center;
+	gap: 20px;
+	text-align: center;
+	padding-bottom: 10px;
+
+}
+
+.containers img {
+	opacity: 95%;
+}
+
+.containers img:hover {
+	-webkit-transform: scale(1.02);
+	-ms-transform: scale(1.02);
+	transform: scale(1.02);
+	opacity: 1;
+	cursor: pointer;
+}
+
+.sep {
+	background-color: rgb(228, 227, 227);
+	padding-bottom: 10px;
+}
