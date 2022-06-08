@@ -9,8 +9,7 @@ function App() {
 
     <div>
       <NavBar />
-      <ListItemCointainer />
-
+      <ListItemCointainer fun={ale} />
     </div>
   );
 }

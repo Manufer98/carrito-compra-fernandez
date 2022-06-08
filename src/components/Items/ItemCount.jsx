@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-const ItemCount = ({productName,initial,stock}) =>{
+const ItemCount = ({productName,initial,stock,onAdd}) =>{
 	const [initialValue, setInitialValue] = useState(initial)
 	const [stockValue, setStockValue] = useState(stock)
-	
-	const onAdd = () =>{
-
-		if(initialValue<=stockValue){
-			alert("Se han agregado "+initialValue + " "+productName);
-			setStockValue(stockValue-initialValue);
-			setInitialValue(1);
-		}
-	}
 
 	const getBadgeClasses = () =>{
 		let classes="btn btn-secondary mt-3 " 
@@ -55,7 +46,11 @@ const ItemCount = ({productName,initial,stock}) =>{
 		}} >+</Button>
 		</div>
 		<Button className={getBadgeClasses()}
-		onClick={() => onAdd()}>Agregar al carrito</Button>
+		onClick={() =>{ 
+			setStockValue(onAdd(initialValue,stockValue,productName))
+			setInitialValue(1);
+		}
+		}>Agregar al carrito</Button>
 		</Card.Body>
 	</Card>
 	
