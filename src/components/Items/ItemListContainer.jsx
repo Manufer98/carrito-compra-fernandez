@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from 'react-bootstrap';
-import ItemCount from "./ItemCount";
+import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-const ItemListContainer = ({fun,greeting}) =>{
+import "./ItemListContainer.css";
+const ItemListContainer = () =>{
 	const [data, setData] =useState();
-	const [initial,setInitial] = useState(1);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
 	useEffect (() =>{
 		
-		const list=new Promise((resolve,eject)=>{
+		const list=new Promise((resolve,reject)=>{
 			
 
 			setTimeout(() =>{
@@ -18,47 +18,28 @@ const ItemListContainer = ({fun,greeting}) =>{
 					{ id: "3", title: "Ipad", description:"Ipad 15R", price: 800, pictureUrl : "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80" },
 					{ id: "4", title: "Apple TV", description:"Gen 3", price: 250, pictureUrl : "https://images.unsplash.com/photo-1621685950846-9323d993bbf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
 				  ]
-		  ) 
-			},2000)
+		  )  
+		  
+			},2500)
 		})
 
 		list.then((result)=>{
-		
 		setData(result)
-		
 		})
-		.catch((err)=>console.log(err))
+		.catch((err)=>{
+			setError(true);
+		 	console.log(err)})
+		.finally(()=>setLoading(false))
 	
-
-		
 	},[])
 
-
-	const Add= (initial,stock,product) =>{
-		alert("Se han agregado "+initial + " "+product);
-		return stock-initial;
-	}
 	
 	return (
-		
 	<>
-	<ItemList data={data}/> 
-	<Container className='mt-5'>
-		<Row >
-			<Col >
-			<ItemCount productName="Camisa Tiger" onAdd={Add} stock={5} initial={initial}/>
-			</Col>
-			<Col>
-			<ItemCount productName="Pantalon Pepe" onAdd={Add} stock={8} initial={initial}/>
-			</Col>
-		</Row>
-		<Row className='mt-4'>
-			</Row>
-			</Container> 
-			
+	<div className={loading ? "loading" : ""}></div>
+	<div className='text-center'>{error && "Ha ocurrido un error, vuelva a intertalo mas tarde"}</div>
+	<ItemList data={data}/> 			
 	</>
-	
-
 	)
 }
 export default ItemListContainer;

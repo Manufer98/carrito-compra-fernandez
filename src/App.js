@@ -1,16 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import ListItemCointainer from "./components/Items/ItemListContainer";
-import NavBar from "./components/NavBar/NavBar";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import ItemListContainer from "./components/Items/ItemListContainer";
+import Navbar from "./components/NavBar/NavBar";
+import Home from "./components/Pruebas/Home";
+import TestProducto from "./components/Pruebas/TestProducto";
 function App() {
-  const ale = (greeting) => {
-    alert(greeting)
-  }
   return (
 
-    <div>
-      <NavBar />
-      <ListItemCointainer fun={ale} />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/producto/:id" element={<TestProducto />} />
+      </Routes>
+    </BrowserRouter>
+
+
   );
 }
 

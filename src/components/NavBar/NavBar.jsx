@@ -1,4 +1,5 @@
 import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Logo from "../../logo.png";
 import CartWidget from '../Items/CartWidget';
 import "./NavBar.css";
@@ -7,14 +8,19 @@ const NavBar = () => {
 		<div className='App'>
 		<Navbar className='ml-auto' bg="dark " variant='dark' sticky='top' 
 		expand="lg" collapseOnSelect>
+			
 		<Navbar.Brand  >
+			<Link to="/">
 			<img  className="my-auto mx-3" src={Logo} width="80px" alt='logo react'/>
+			</Link>
 			Carrito de Compra
+			
 		</Navbar.Brand >
+	
 		<Navbar.Toggle/>
 		<Navbar.Collapse className="text-center  mx-4">
 		<Nav className=" ms-auto" >
-		<Button  className="mb-1 mx-5" size="sm" variant="outline-light"  >Inicio</Button>
+		<Link to="/"><Button  className="" size="sm" variant="outline-light"  >Inicio</Button></Link>
 			<NavDropdown  title="Productos"> 
 			<NavDropdown.Item>
 			Café</NavDropdown.Item>
@@ -27,8 +33,8 @@ const NavBar = () => {
 			
 			<Nav.Link variant="light"> Sobre Nostros</Nav.Link>
 			<Nav.Link> Contacto</Nav.Link>
-			<Button className="mx-5 mb-1" size="sm" bg="ligth " variant="outline-light">Login</Button>
-			<CartWidget className="cart"  num={0} />
+			<Link to="/"><Button className="mb-2 mx-2" size="sm" bg="ligth " variant="outline-light">Login</Button></Link>
+			<Link to="/"><CartWidget className="cart"  num={0} /></Link>
 		</Nav>
 		</Navbar.Collapse>
 		</Navbar>

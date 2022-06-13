@@ -1,5 +1,5 @@
 import "./Item.css";
-const Item = ({item})=>{
+const ItemDetail = ({item})=>{
 
 return(
 		<>
@@ -20,4 +20,4 @@ return(
 
 }
 
-export default Item;
+export default ItemDetail;
