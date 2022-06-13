@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 import "./ItemsList.css";
 const ItemList = ({data}) =>{
-	const [d,setD]=useState();
-	const [loading, setLoading] = useState(true);
-	const [loadItem, setLoadItem]=useState(false);
+	const [products,setProducts]=useState();
 	const [item, setItem]=useState();
 	
 		useEffect(() =>{
@@ -14,30 +12,25 @@ const ItemList = ({data}) =>{
 			})
 	
 			handleProps.then((values)=>{
-				console.log(values)
-				setD(values)
-				
-			})
+				setProducts(values)
+			}).catch((err)=>console.log(err))
 		},[data]);
 
 		const handleVer = (item) =>{
-
-			setLoadItem(true);
 			setItem(item);
-			console.log(item)
-
-
 		}
+
+		
 		
 	
 	return(
 		<>
-		{item ? <Item item={item}/> : ""}
-		<div className="containers">{d && d.map((item)=>
+		{item ? <ItemDetail item={item}/> : ""}
+		<div className="containers">{products && products.map((item)=>
 		<div key={item.id}  className="sep">
 		<div className="">
 		<p className="title ">{item.title}</p>
-		<img onClick={()=>handleVer(item)} className="img" width={400} height={300} src={item.pictureUrl} alt="image" />
+		<img onClick={()=>handleVer(item)} className="img" width={400} height={300} src={item.pictureUrl} alt="products" />
 		<p className="description">{item.description}</p>
 		<p className="border">Precio: {item.price}</p>
 		<Button onClick={()=>handleVer(item)}>Ver Detalle</Button>
