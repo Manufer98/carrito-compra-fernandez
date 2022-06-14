@@ -50,3 +50,9 @@
 		transform: rotate(360deg);
 	}
 }
+
+.link {
+
+	text-decoration: none;
+	color: red
+}
