@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import CarritoNum from './CarritoNum';
+
 const ItemCount = ({productName,initial,stock,onAdd}) =>{
 	const [initialValue, setInitialValue] = useState(initial)
 	const [stockValue, setStockValue] = useState(stock)
+	const [cantidad, setCantidad]=useState(0);
 
 	const getBadgeClasses = () =>{
 		let classes="btn btn-secondary mt-3 " 
@@ -23,12 +26,10 @@ const ItemCount = ({productName,initial,stock,onAdd}) =>{
 
 	
 	return (
-		<>
-	    <Card className='text-center m-3 h-100 shadow-sm rounded'>
+		<div className="con" >
+	    <Card className='text-center shadow-sm rounded'>
 		<Card.Body>
-		<Card.Title>
-		<div>{productName}</div>
-		</Card.Title>	
+		
 		<Card.Text>
 		{(stockValue!==0) ?  `Stock disponible: ${stockValue}` : "No hay stock"}
 		</Card.Text>
@@ -49,12 +50,16 @@ const ItemCount = ({productName,initial,stock,onAdd}) =>{
 		onClick={() =>{ 
 			setStockValue(onAdd(initialValue,stockValue,productName))
 			setInitialValue(1);
+			setCantidad(initialValue+cantidad)
+			
+
 		}
 		}>Agregar al carrito</Button>
+		<CarritoNum num={cantidad}/>
 		</Card.Body>
 	</Card>
 	
-	</>
+	</div>
 
 	)
 }
