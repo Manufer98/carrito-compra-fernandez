@@ -18,12 +18,12 @@ const ItemDetailCointainer = () =>{
 		.then((response) => response.json())
 		.then((data) =>{
 			//console.log(data)
-			setItem(data.find(i=>i.id==id))
+			setItem(data.find(i=>i.id===id))
 		}).catch((e) => console.log("Error: " + e))
 	},[id]);
 
 	
-	console.log(item.id)
+	
 	
 	return (
 		<>
