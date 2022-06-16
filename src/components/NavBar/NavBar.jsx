@@ -22,7 +22,8 @@ const NavBar = () => {
 		}).catch((e) => console.log("Error: " + e))
 	},[]);
 
-	
+	//Filtro los elementos unicos de categoria para que no se repitan en el navbar
+	const categorysFilter=[...new Set( category.map(obj => obj))];
 
 
 	
@@ -45,7 +46,7 @@ const NavBar = () => {
 		<Link to="/"><Button  className="mx-2"  variant="outline-light"  >Inicio</Button></Link>
 			
 			{/* <NavDropdown  title="Productos">  */}
-			{category.map((i,index)=><Link key={index} to={"/categoria/"+i}>
+			{categorysFilter.map((i,index)=><Link key={index} to={"/categoria/"+i}>
 			<Button  variant="dark">
 			{i}</Button>
 			</Link>)}
