@@ -48,7 +48,6 @@ const ItemListContainer = () =>{
 	<div className='con'>
 	<div className={loading ? "loading" : ""}></div>
 	<div className='text-center'>{error && "Ha ocurrido un error, vuelva a intertalo mas tarde"}</div>
-	{/* <TestProducto data={data}/> */}
 	<ItemList data={data}/> 
 	</div>	
 	}		

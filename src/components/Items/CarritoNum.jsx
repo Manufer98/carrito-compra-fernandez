@@ -1,7 +1,7 @@
 
 const CarritoNum= ({num}) =>{
 	return(
-		<p>Productos añadidos: {num}</p>
+		<p></p>
 	)
 }
 export default CarritoNum ;
