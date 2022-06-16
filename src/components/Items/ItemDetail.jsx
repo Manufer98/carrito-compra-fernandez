@@ -1,6 +1,8 @@
 import ItemCount from "./ItemCount";
+import {useState} from "react"
 import "./ItemDetail.css";
 const ItemDetail = ({pictureUrl,title,description,price})=>{
+const [agregado, setAgregado] =useState(true);
 
 const onAdd= (initial,stock,productName)=>{
 	const result=stock - initial;
@@ -8,6 +10,7 @@ const onAdd= (initial,stock,productName)=>{
 	return result;
 
 }
+
 
 return(
 		<>
@@ -20,7 +23,7 @@ return(
 		<h2>{title && title}</h2>
 		<h3>{description && description}</h3>
 		<h5>Precio: ${price && price}</h5>
-		<ItemCount  productName={title} initial={1} stock={10} onAdd={onAdd}/>
+		<ItemCount agregado={agregado} setAgregado={setAgregado} productName={title} initial={1} stock={10} onAdd={onAdd}/>
 		</div>
 		</div>  
 		</>
