@@ -1,16 +1,18 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
-import {useState} from "react"
 import "./ItemDetail.css";
-const ItemDetail = ({pictureUrl,title,description,price})=>{
+const ItemDetail = ({item})=>{
+
+const {id,pictureUrl,title,description,price} = item;
 const [agregado, setAgregado] =useState(true);
 
 const onAdd= (initial,stock,productName)=>{
 	const result=stock - initial;
 	alert(`Se ha${(initial>1) ? "n" : ""} agregado ${initial} ${productName} `);
+	
 	return result;
 
 }
-
 
 return(
 		<>
@@ -23,7 +25,7 @@ return(
 		<h2>{title && title}</h2>
 		<h3>{description && description}</h3>
 		<h5>Precio: ${price && price}</h5>
-		<ItemCount agregado={agregado} setAgregado={setAgregado} productName={title} initial={1} stock={10} onAdd={onAdd}/>
+		<ItemCount item={item} id={id} agregado={agregado} setAgregado={setAgregado} productName={title} initial={1} stock={10} onAdd={onAdd}/>
 		</div>
 		</div>  
 		</>
