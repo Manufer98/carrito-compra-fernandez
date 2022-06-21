@@ -5,7 +5,7 @@ import { MiContexto } from '../../context/CartContext';
 const Item = ({id, description,title,price,pictureUrl}) =>{
 	const {darkMode,SetDarkMode}=useContext(MiContexto);
 	
-	console.log(darkMode)
+/* 	console.log(darkMode) */
 	return (
 		<>
 		<div key={id}  className="sep">

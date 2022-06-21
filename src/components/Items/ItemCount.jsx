@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { MiContexto } from '../../context/CartContext';
 import CarritoNum from './CarritoNum';
+
 import { Link } from 'react-router-dom';
 
-const ItemCount = ({productName,initial,stock,onAdd,agregado,setAgregado}) =>{
+const ItemCount = ({item,initial,stock,onAdd,agregado,setAgregado}) =>{
+
+	const {title} =item;
 	const [initialValue, setInitialValue] = useState(initial)
 	const [stockValue, setStockValue] = useState(stock)
 	const [cantidad, setCantidad]=useState(0);
-	
+	const {addItem}=useContext(MiContexto);
 
 	const getBadgeClasses = () =>{
 		let classes="btn btn-secondary mt-3 " 
@@ -51,11 +55,12 @@ const ItemCount = ({productName,initial,stock,onAdd,agregado,setAgregado}) =>{
 		</div>
 		<Button className={getBadgeClasses()}
 		onClick={() =>{ 
-			setStockValue(onAdd(initialValue,stockValue,productName))
+			setStockValue(onAdd(initialValue,stockValue,title))
 			setInitialValue(1);
 			setCantidad(initialValue+cantidad)
 			setAgregado(false)
-
+			addItem(item,initialValue)
+			
 		}
 		}>Agregar al carrito</Button>
 		<CarritoNum num={cantidad}/>

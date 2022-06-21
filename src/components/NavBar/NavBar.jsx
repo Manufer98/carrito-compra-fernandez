@@ -58,7 +58,8 @@ const NavBar = () => {
 			<Link to="/"><Button className=" " bg="ligth " variant="outline-light">Login</Button></Link>
 			</div>
 			<div className="cart">
-			<CartWidget variant="dark"  />
+			<Link to="/cart"><CartWidget   /></Link>
+			
 			</div>
 		</Nav>
 		</Navbar.Collapse>
