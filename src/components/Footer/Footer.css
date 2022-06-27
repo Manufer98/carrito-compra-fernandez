@@ -1,30 +1,17 @@
 .c {
 	position: fixed;
-	left: 0;
 	bottom: 0;
+	left: 0;
 	right: 0;
-
 }
 
-footer {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	background: rgb(77, 31, 31);
-	height: auto;
-	width: 100%;
-	font-family: 'Montserrat', sans-serif;
-	color: wheat;
-	position: absolute;
-
-}
 
 .footer-content {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	background-color: rgb(120, 117, 117);
-
+	background-color: rgb(33, 37, 41);
+	color: #DCD7C9;
 }
 
 .footer-content h3 {
@@ -62,10 +49,14 @@ footer {
 }
 
 .footer-bottom {
-	background: rgb(126, 108, 108);
+	background-color: rgb(33, 37, 41);
 	width: 100%;
-	padding: 20px 0;
+	padding: 5px 0;
 
+}
+
+.line {
+	border: 10px solid green;
 }
 
 .footer-bottom p {
@@ -82,7 +73,7 @@ footer {
 .ww {
 	padding-left: 5px;
 	text-decoration: dashed;
-	color: rgb(10, 3, 3);
+	color: rgb(249, 249, 249);
 	font-size: large;
 	font-family: sans-serif
 }

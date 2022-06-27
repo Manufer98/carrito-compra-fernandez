@@ -18,6 +18,7 @@ const Item = ({id, description,title,price,pictureUrl}) =>{
 		</Link>
 		<p className="description">{description}</p>
 		<p className="border">Precio: {price}</p>
+		
 		<Button variant="dark"><Link className="link" to={"/item/"+id}>Ver Detalle</Link></Button>
 		</div>
 		</div>
