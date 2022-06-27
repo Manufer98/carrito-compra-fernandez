@@ -5,7 +5,7 @@ const Footer = () => {
 
 	return (
 		<div className="c">
-		<div id="footer" className="footer-content">
+		<div  className="footer-content">
 			<h3>Carrito de Compra</h3>
 		
 			<h6>Coder House</h6>
@@ -14,6 +14,7 @@ const Footer = () => {
 				<li><a href="https://github.com/Manufer98" target="_blank" rel="noreferrer" > <BsGithub className="fa fa-github"></BsGithub>  </a></li>
 				
 			</ul>
+			
 			<div className="footer-bottom" >
 				<p>copyright &copy;2022 designed by    <span ><a className="ww" href="https://www.linkedin.com/in/manuel-fern%C3%A1ndez-delfino-435bb918b/" target="_blank"  rel="noreferrer">Manuel Fernández</a></span> </p>
 

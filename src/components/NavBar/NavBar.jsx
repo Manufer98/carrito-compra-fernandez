@@ -45,12 +45,12 @@ const NavBar = () => {
 		<Nav className=" mx-auto ms-auto" >
 		<Link to="/"><Button  className="mx-2"  variant="outline-light"  >Inicio</Button></Link>
 			
-			{/* <NavDropdown  title="Productos">  */}
+			
 			{categorysFilter.map((i,index)=><Link key={index} to={"/categoria/"+i}>
 			<Button  variant="dark">
 			{i}</Button>
 			</Link>)}
-			{/* </NavDropdown> */}
+			
 
 			<Nav.Link variant="light"> Sobre Nostros</Nav.Link>
 			<Nav.Link> Contacto</Nav.Link>
