@@ -53,7 +53,7 @@ const Cart = () =>{
 					  <div>
 					  <div className="coun">
 					<Button onClick={()=>qtyMinus(item)}>-</Button>
- 						<div className="countt">{item.quantity}</div>
+ 						<div style={{color: "#fdd8d2"}} className="countt">{item.quantity}</div>
  		
 		 			<Button  onClick={()=>qtyPlus(item)}>+</Button>
 		
