@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import { MiContexto } from '../../context/CartContext';
 const Item = ({id, description,title,price,pictureUrl}) =>{
-	const {darkMode,SetDarkMode}=useContext(MiContexto);
-	
+
 /* 	console.log(darkMode) */
 	return (
 		<>
