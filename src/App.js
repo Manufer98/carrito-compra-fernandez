@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Cart from "./components/Items/Cart";
+import Checkout from "./components/Items/Checkout";
 import ItemDetailCointainer from "./components/Items/ItemDetailContainer";
 import ItemListContainer from "./components/Items/ItemListContainer";
 import NotFound from "./components/Items/NotFound";
@@ -36,6 +37,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/categoria/:id" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailCointainer />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </BrowserRouter>

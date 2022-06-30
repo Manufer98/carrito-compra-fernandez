@@ -65,31 +65,31 @@ const getItemQuantity= () =>{
 }
 
  const qtyPlus=(item) =>{
+
+	console.log(item.stock)
 	const indexItem=cart.indexOf(item);
-	
 	const auxArray=[...cart]
-	if(auxArray[indexItem].quantity<10 ){
+	if(auxArray[indexItem].quantity<item.stock ){
 	auxArray[indexItem].quantity++;
 	setCart(auxArray); 
+
 	}
-	
  }
  const qtyMinus=(item) =>{
+
+
 	const indexItem=cart.indexOf(item);
-	
-	
 	const auxArray=[...cart]
 	if(auxArray[indexItem].quantity>1 ){
-		
 	auxArray[indexItem].quantity--;
 	setCart(auxArray);
- }
-	
- }
+
+ 	}
+}
 
 
 	return(
-	<MiContexto.Provider value={{getTotalPriceItems,qtyMinus,qtyPlus,getItemQuantity,getTotalPrice,deleteItem,emptyCarrito,cart, setCart, addItem }}>
+	<MiContexto.Provider value={{isInCart,getTotalPriceItems,qtyMinus,qtyPlus,getItemQuantity,getTotalPrice,deleteItem,emptyCarrito,cart, setCart, addItem }}>
 		{children}
 	</MiContexto.Provider>)
 

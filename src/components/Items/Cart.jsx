@@ -49,12 +49,13 @@ const Cart = () =>{
 						<p className="lead fw-normal mb-0"> ${getTotalPrice(item)}</p>
 					  </div>
 					</div>
+					
 					<div className="col-md-2 d-flex justify-content-center">
+					
 					  <div>
 					  <div className="coun">
 					<Button onClick={()=>qtyMinus(item)}>-</Button>
  						<div style={{color: "#fdd8d2"}} className="countt">{item.quantity}</div>
- 		
 		 			<Button  onClick={()=>qtyPlus(item)}>+</Button>
 		
  					</div>
@@ -63,8 +64,11 @@ const Cart = () =>{
 					<div className="col-md-2 d-flex justify-content-center">
 					  <div>
 					  <Button style={{marginTop:"50px"}} onClick={()=> deleteItem(item.id)}>Eliminar</Button> 
+					  
 					  </div>
+					  
 					</div>
+					<p className="small mx-5 ">Stock {item.stock}</p>
 				  </div>
 	  
 				</div>
@@ -92,7 +96,7 @@ const Cart = () =>{
 			  </div>
 	  
 			  <div className="d-flex justify-content-end">
-			  <Button >Finalizar Compra</Button>
+			  <Button onClick={()=>navigate("/checkout")} >Finalizar Compra</Button>
 				<Button onClick={emptyCarrito} style={{backgroundColor:"#DCD7C9",color:"#2C3639"}}  className="btn btn-light  me-2">Vaciar Carrito</Button>
 			
 			  </div> 
