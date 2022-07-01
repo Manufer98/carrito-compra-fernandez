@@ -30,8 +30,9 @@ const addItem = (item,quantity)=>{
 	}else{
 	setCart([...cart,newItem]);		
 }
+
+	//localStorage.setItem('cart', cart);
 	
-	console.log(cart)
 	
 }
 
