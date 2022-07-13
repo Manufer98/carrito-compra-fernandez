@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 export const MiContexto = createContext({});
 
 const CartContext = ({children}) =>{
-const [cart,setCart] = useState([]);
+const [cart,setCart] = useState(JSON.parse(localStorage.getItem("cart")) ?? []);
 
 
 const isInCart = (id) =>{
@@ -23,26 +23,32 @@ const addItem = (item,quantity)=>{
 		const auxArray=[...cart];
 		auxArray[productIndex].quantity+=quantity;
 		setCart(auxArray);
-
+		handleLocalStorage(auxArray);
 		
 
 
 	}else{
 	setCart([...cart,newItem]);		
+	handleLocalStorage([...cart,newItem])
 }
 
-	//localStorage.setItem('cart', cart);
 	
 	
+}
+
+const handleLocalStorage = (cart) =>{
+	localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 const emptyCarrito=() =>{
 	setCart([]);
+	handleLocalStorage([])
 
 }
 const deleteItem=(id)=>{
 	const filter=cart.filter(i=>i.id!==id);
 	setCart(filter);
+	handleLocalStorage(filter)
 }
 
 const getTotalPriceItems= () =>{
@@ -73,6 +79,7 @@ const getItemQuantity= () =>{
 	if(auxArray[indexItem].quantity<item.stock ){
 	auxArray[indexItem].quantity++;
 	setCart(auxArray); 
+	handleLocalStorage(auxArray);
 
 	}
  }
@@ -84,7 +91,7 @@ const getItemQuantity= () =>{
 	if(auxArray[indexItem].quantity>1 ){
 	auxArray[indexItem].quantity--;
 	setCart(auxArray);
-
+	handleLocalStorage(auxArray);
  	}
 }
 

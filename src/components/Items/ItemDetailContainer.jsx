@@ -34,11 +34,11 @@ const ItemDetailCointainer = () =>{
 	
 	
 	return (
-		<>
+		<div  style={{minHeight: '100vh'}}>
 		 {loading ? <div className={loading ? "loading" : ""}></div> :
 		  <ItemDetail item={item}  />
 		}
-        </>
+        </div>
 	)
 }
 

@@ -33,7 +33,7 @@ const ItemListContainer = () =>{
 	
 	
 	return (
-	<>
+	<div style={{minHeight: '100vh'}}>
 	{id ? <><div className={loading ? "loading" : ""}></div> <ItemList data={a}/> </>: 
 	<div className='con'>
 	<div className={loading ? "loading" : ""}></div>
@@ -41,7 +41,7 @@ const ItemListContainer = () =>{
 	<ItemList data={data}/> 
 	</div>	
 	}		
-	</>
+	</div>
 	)
 }
 export default ItemListContainer;
