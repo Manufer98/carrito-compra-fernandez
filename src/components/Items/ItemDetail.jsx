@@ -26,8 +26,7 @@ useEffect(()=>{
 
 return(
 		<>
-		
-		<div>
+		<div >
 		<h2 className="tit">Detalle</h2>
 		 <div className="split">
 		<div>
