@@ -21,6 +21,7 @@ Tanto los productos y las órdenes generadas se almacenan en `Firebase`
 * [React Boostrap](https://react-bootstrap.github.io/)
 * [React Router](https://reactrouter.com/)
 * [Firebase](https://firebase.google.com/)
+* [Formik](https://formik.org/)
 
 
 # Ejecucion del proyecto
