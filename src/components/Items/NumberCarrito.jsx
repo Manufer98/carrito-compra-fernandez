@@ -1,12 +1,11 @@
-import CartWidget from "./CartWidget";
+import CartWidget from './CartWidget';
 
-
-const NumberCarrito = () =>{
-	const number=0;
+const NumberCarrito = () => {
+	const number = 0;
 	return (
-	<>
-	<CartWidget number={number}/>
-	</>
-	)
-}
+		<>
+			<CartWidget number={number} />
+		</>
+	);
+};
 export default NumberCarrito;
