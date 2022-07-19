@@ -26,7 +26,7 @@ function App() {
 
 
   return (
-    < >
+    <div className="App">
 
       <CartContext>
         <BrowserRouter>
@@ -43,7 +43,7 @@ function App() {
         </BrowserRouter>
       </CartContext>
 
-    </>
+    </div>
 
 
   );

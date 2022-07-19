@@ -1,8 +1,10 @@
 .c {
-	position: fixed;
+	position: sticky;
 	bottom: 0;
-	left: 0;
-	right: 0;
+	width: 100%;
+	height: 100%;
+
+
 }
 
 
@@ -19,11 +21,11 @@
 	font-weight: 400;
 	text-transform: capitalize;
 	font-family: 'Montserrat', serif;
-	line-height: 3rem;
+	line-height: 2rem;
 }
 
 .footer-content p {
-	line-height: 29px;
+	line-height: 20px;
 	font-size: 14px;
 	padding-left: 180px;
 	display: flex;

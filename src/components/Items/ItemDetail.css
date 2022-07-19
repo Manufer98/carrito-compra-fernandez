@@ -3,12 +3,14 @@
 	margin-right: 20px;
 	text-align: center;
 
+
 }
 
 .split {
 	display: flex;
 	flex-direction: column;
 	margin-left: 20px;
+	color: #424642;
 	margin-right: 20px;
 
 }
@@ -17,7 +19,13 @@
 	margin-left: 10px;
 }
 
-@media (min-width: 50em) {
+.imgg {
+	width: 300px;
+	height: 200px;
+	border-radius: 20px;
+}
+
+@media (min-width: 65em) {
 	.split {
 		flex-direction: row;
 		margin-left: 20px;
@@ -27,5 +35,11 @@
 
 	.detalle {
 		margin-left: 50px;
+	}
+
+	.imgg {
+
+		width: 600px;
+		height: 500px;
 	}
 }

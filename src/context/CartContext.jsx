@@ -73,7 +73,7 @@ const getItemQuantity= () =>{
 
  const qtyPlus=(item) =>{
 
-	console.log(item.stock)
+	
 	const indexItem=cart.indexOf(item);
 	const auxArray=[...cart]
 	if(auxArray[indexItem].quantity<item.stock ){
