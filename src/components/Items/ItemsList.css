@@ -1,12 +1,11 @@
-.description {
-	color: red;
+.sep p {
+	color: rgb(54, 15, 15);
+	font-size: 20px;
+	font-weight: 400;
 }
 
-.title {
-	font-size: 30px;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-}
+
 
 .containers {
 	display: flex;
@@ -15,21 +14,54 @@
 	background-color: #808d8e;
 	justify-content: space-evenly;
 	gap: 10px;
-	text-align: center;
 	width: 100%;
+	
 
 }
-
+.description{
+	padding-top: 10px;
+}
 .sep {
 	background-color: #cdcdca;
 	margin-bottom: 20px;
 	margin-top: 20px;
-
+	padding-bottom: 20px;
+	display: flex;
+	padding-top: 20px;
+	font-family: "poppins-medium", sans-serif;
+	
 
 }
 
+.sep:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	transform: scale(1.03);
+
+}
+
+
+.sep p{
+	padding-left: 20px;
+}
+
+.btn{
+	margin-left: 20px;
+}
+
+.sep h2 {
+	color: rgb(54, 15, 15);
+	font-size: 30px;
+	font-weight: 600;
+	padding-left: 20px;
+	padding-bottom: 10px;
+
+}
+
+
+
+
 .containers img {
-	opacity: 95%;
+	opacity: 98%;
 	width: 300px;
 	height: 200px;
 }
@@ -42,11 +74,17 @@
 		flex-direction: row;
 		padding-left: 20px;
 		padding-left: 20px;
+		
 
+	}
+	.sep:hover {
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		transform: scale(1.00);
+	
 	}
 
 	.containers img {
-		opacity: 95%;
+		opacity: 98%;
 
 
 		width: 500px;
@@ -59,9 +97,9 @@
 
 
 .containers img:hover {
-	-webkit-transform: scale(1.02);
-	-ms-transform: scale(1.02);
-	transform: scale(1.02);
+	-webkit-transform: scale(1.0001);
+	-ms-transform: scale(1.0001);
+	transform: scale(1.0001);
 	opacity: 1;
 	cursor: pointer;
 }
@@ -82,5 +120,7 @@
 
 .link {
 	text-decoration: none;
-	color: red
+	color: rgb(203, 201, 201);
+	font-size: 15px;
+	font-weight: 400;
 }

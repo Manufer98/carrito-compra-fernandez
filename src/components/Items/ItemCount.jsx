@@ -35,10 +35,10 @@ const ItemCount = ({ item, initial, stock, onAdd, agregado, setAgregado }) => {
 	return (
 		<div className="con">
 			{agregado ? (
-				<Card style={{ backgroundColor: '#DFDFDE' }} className="text-center shadow-sm rounded">
+				<Card style={{ backgroundColor: '#b3b3af' }} className="text-center shadow-sm rounded">
 					<Card.Body>
-						<Card.Text>{stockValue !== 0 ? `Stock disponible: ${stockValue}` : 'No hay stock'}</Card.Text>
-						<div className="border rounded">
+						<Card.Text style={{ color: 'black' }}>{stockValue !== 0 ? `Stock disponible: ${stockValue}` : 'No hay stock'}</Card.Text>
+						<div className="">
 							<Button
 								variant="primary"
 								className={getBadgeClassesMinus()}
@@ -78,7 +78,8 @@ const ItemCount = ({ item, initial, stock, onAdd, agregado, setAgregado }) => {
 				<>
 					<Link to="/cart">
 						{' '}
-						<Button className="mt-3">Ir al carrito</Button>{' '}
+						<Button className="mt-3 mx-1">Ir al carrito</Button>
+						{''}
 					</Link>
 					<Button onClick={() => setAgregado(true)} className={getBadgeClassesSeguirComprando()}>
 						Seguir comprando

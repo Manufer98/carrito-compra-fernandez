@@ -5,14 +5,14 @@ const Item = ({ id, description, title, price, pictureUrl }) => {
 		<>
 			<div key={id} className="sep">
 				<div className="">
-					<p className="title ">{title}</p>
+					<h2 className="title">{title}</h2>
 					<Link to={'/item/' + id}>
 						<img className="img" width={400} height={300} src={pictureUrl} alt="products" />
 					</Link>
 					<p className="description">{description}</p>
-					<p className="border">Precio: {price}</p>
+					<p className="price">Precio: {price}</p>
 
-					<Button variant="dark">
+					<Button className="btn" variant="dark">
 						<Link className="link" to={'/item/' + id}>
 							Ver Detalle
 						</Link>
