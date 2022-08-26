@@ -31,9 +31,9 @@ const ItemDetail = ({ item }) => {
 						<img className="imgg" alt="Imagen detalle" src={pictureUrl && pictureUrl} />
 					</div>
 					<div className="detalle">
-						<h2>{title && title}</h2>
-						<h3>{description && description}</h3>
-						<h5>Precio: ${price && price}</h5>
+						<h2 className="informacion">{title && title}</h2>
+						<h3 className="informacion">{description && description}</h3>
+						<h5 className="informacion">Precio: ${price && price}</h5>
 						{isIn ? (
 							<ItemCount item={item} id={id} agregado={agregado} setAgregado={setAgregado} productName={title} initial={1} stock={stock} onAdd={onAdd} />
 						) : (
